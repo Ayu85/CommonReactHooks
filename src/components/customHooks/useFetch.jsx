@@ -9,7 +9,7 @@ const useFetch=(url)=>{
       setData(json)
     }
     getData()
-  },[])
+  },[url])
   return {data};
 }
 
