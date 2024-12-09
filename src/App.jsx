@@ -17,7 +17,7 @@ export default function App() {
       {/* {value}
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button> */}
-      
+      {JSON.stringify(data)}
     </main>
   );
 }
