@@ -1,14 +1,17 @@
+import { useState } from "react";
 import "./App.css";
 import useCounter from "./components/customHooks/useCounter";
 import useFetch from "./components/customHooks/useFetch";
 import FocusInput from "./components/useRef/Case1";
 import Chat from "./components/useRef/Case2";
 import Stopwatch from "./components/useRef/Case3";
+import usePrev from "./components/customHooks/usePrev";
 
 export default function App() {
   const { value, increment, decrement } = useCounter();
   const { data } = useFetch('https://dummyjson.com/users');
-  console.log(data)
+const [count,setCount]=useState(0)
+  const prev=usePrev(count)
   return (
     <main>
       {/* <FocusInput /> */}
@@ -17,7 +20,10 @@ export default function App() {
       {/* {value}
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button> */}
-      {JSON.stringify(data)}
+      {/* {JSON.stringify(data)} */}
+      <div>{count}</div>
+      <button onClick={()=>setCount(count=>count+1)}>++++</button>
+      <button>previous value was {prev}</button>
     </main>
   );
 }
