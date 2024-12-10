@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import "./index.css";
 import useCounter from "./components/customHooks/useCounter";
 import useFetch from "./components/customHooks/useFetch";
 import FocusInput from "./components/useRef/Case1";
@@ -8,6 +8,7 @@ import Stopwatch from "./components/useRef/Case3";
 import usePrev from "./components/customHooks/usePrev";
 import DebouncedComponent from "./components/customHooks/useDebounce";
 import Parent from "./components/memo/Parent";
+import Otp from "./components/Otp_Implementation/Otp";
 
 export default function App() {
   const { value, increment, decrement } = useCounter();
@@ -15,7 +16,7 @@ export default function App() {
 const [count,setCount]=useState(0)
   const prev=usePrev(count)
   return (
-    <main>
+    <main className="bg-blue-900 text-white h-screen">
       {/* <FocusInput /> */}
       {/* <Chat/> */}
       {/* <Stopwatch/> */}
@@ -27,7 +28,8 @@ const [count,setCount]=useState(0)
       <button onClick={()=>setCount(count=>count+1)}>++++</button>
       <button>previous value was {prev}</button> */}
       {/* <DebouncedComponent/> */}
-      <Parent/>
+      {/* <Parent/> */}
+      <Otp/>
     </main>
   );
 }
