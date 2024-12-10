@@ -7,6 +7,7 @@ import Chat from "./components/useRef/Case2";
 import Stopwatch from "./components/useRef/Case3";
 import usePrev from "./components/customHooks/usePrev";
 import DebouncedComponent from "./components/customHooks/useDebounce";
+import Parent from "./components/memo/Parent";
 
 export default function App() {
   const { value, increment, decrement } = useCounter();
@@ -25,7 +26,8 @@ const [count,setCount]=useState(0)
       {/* <div>{count}</div>
       <button onClick={()=>setCount(count=>count+1)}>++++</button>
       <button>previous value was {prev}</button> */}
-      <DebouncedComponent/>
+      {/* <DebouncedComponent/> */}
+      <Parent/>
     </main>
   );
 }
