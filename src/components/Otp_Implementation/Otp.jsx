@@ -35,8 +35,14 @@ const Otp=()=>{
 }
 
 const SubOtp=({reference,onDone})=>{
-  
-return <input onChange={()=>onDone()} ref={reference} type="text" className="bg-blue-200 font-bold border text-center text-black rounded-xl w-20 h-12" placeholder=""/>
+  const[inputVal,setInputVal]=useState('')
+return <input value={inputVal} onChange={(e)=>{
+  onDone()
+  if(e.target.value>=0 && e.target.value<10)
+    setInputVal(e.target.value)
+  else
+    setInputVal("")
+}}  ref={reference} type="text" className="bg-blue-200 font-bold border text-center text-black rounded-xl w-20 h-12" placeholder=""/>
 
 }
 
